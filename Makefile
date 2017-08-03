@@ -5,6 +5,11 @@ all: lint test build install ## Test, Build, Install
 run: ## Run gosample
 	go run main.go
 
+fmt: ## run go fmt
+	go fmt github.com\mplx\gosample
+	go fmt github.com\mplx\gosample\cmd
+	go fmt github.com\mplx\gosample\numbers
+
 build: ## Build gosample
 	go build
 
