@@ -2,7 +2,7 @@ build: ## Build gosample
 	go build -o gosample.exe ./cmd/gosample/main.go
 
 test: ## Test gosample
-	go test
+	go test gosample\lib\
 
 # http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 help:
