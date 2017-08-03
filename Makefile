@@ -1,4 +1,6 @@
-all: test build install ## Test, Build, Install
+# fun with paths - cygwin make, windows go
+
+all: lint test build install ## Test, Build, Install
 
 run: ## Run gosample
 	go run main.go
@@ -18,9 +20,15 @@ test: ## Test gosample
 	go tool cover -html=build\coverage.out -o build\coverage.html
 
 setup: ## Setup dependencies
+	# tools
 	go get -u github.com/golang/lint/golint
+	go get -u github.com/goreleaser/goreleaser
+	# packages
 	go get -u github.com/spf13/cobra/cobra
 	go get -u github.com/stretchr/testify/assert
+
+release: ## Release upload to github (env GITHUB_TOKEN!)
+	${GOPATH}/bin/goreleaser --snapshot
 
 # http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 help:

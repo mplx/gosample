@@ -1,0 +1,29 @@
+# .goreleaser.yml
+# https://github.com/goreleaser/goreleaser
+#
+# go get -u github.com/goreleaser/goreleaser
+# GITHUB_TOKEN='TOKEN' ${GOPATH}/bin/goreleaser
+#
+# Build customization
+builds:
+  - binary: gosample
+    goos:
+      - windows
+      - linux
+    goarch:
+      - amd64
+      - arm
+# Archive customization
+archive:
+  format: tar.gz
+  format_overrides:
+    - goos: windows
+      format: zip
+  files:
+    - README.md
+    - LICENSE
+# Release
+release:
+  github:
+    owner: mplx
+    name: gosample
