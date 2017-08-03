@@ -1,24 +1,14 @@
 package numbers
 
-import ("testing")
+import (
+	"testing"
+	
+	"github.com/stretchr/testify/assert"
+)
 
-func TestOne(t *testing.T) {
-	var res int = One()
-	if res != 1 {
-		t.Error ("Expected 1, got", res)
-	}
-}
-
-func TestTwo(t *testing.T) {
-	var res int = Two()
-	if res != 2 {
-		t.Error ("Expected 2, got", res)
-	}
-}
-
-func TestThree(t *testing.T) {
-	var res int = Three()
-	if res != 3 {
-		t.Error ("Expected 3, got", res)
-	}
+func TestNumbers(t *testing.T) {
+	assert := assert.New(t)
+	assert.Equal(One(), 1, "Expected 1")
+	assert.Equal(Two(), 2, "Expected 2")
+	assert.Equal(Three(), 3, "Expected 3")
 }
