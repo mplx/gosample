@@ -1,5 +1,7 @@
-# Buidl directory
+# Build directory
 build/
+# Distribution
+dist/
 # Binaries for programs and plugins
 *.exe
 *.dll
@@ -14,3 +16,4 @@ build/
 
 # Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
 .glide/
+
