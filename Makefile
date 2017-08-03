@@ -1,3 +1,5 @@
+all: test build install ## Test, Build, Install
+
 run: ## Run gosample
 	go run main.go
 
@@ -8,10 +10,7 @@ install: ## Install gosample
 	go install
 
 test: ## Test gosample
-	go test github.com/mplx/gosample/lib
-
-doc: ## Show doc for func (make doc func=One)
-	godoc github.com/mplx/gosample/lib ${func}
+	go test github.com/mplx/gosample/numbers
 
 # http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 help:

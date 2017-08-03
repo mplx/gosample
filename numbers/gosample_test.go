@@ -1,4 +1,4 @@
-package gosample
+package numbers
 
 import ("testing")
 

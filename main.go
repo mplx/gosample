@@ -1,8 +1,15 @@
 package main
 
-import "fmt"
-import lib "github.com/mplx/gosample/lib"
+import (
+	"fmt"
+	"os"
+	
+	"github.com/mplx/gosample/cmd"
+)
 
 func main() {
-	fmt.Println("mplx gosample ...", lib.One(), lib.Two(), lib.Three())
+	if err := cmd.RootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 }

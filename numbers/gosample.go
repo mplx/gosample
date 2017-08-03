@@ -1,4 +1,4 @@
-package gosample
+package numbers
 
 // simply returns (int)1
 func One() int {
