@@ -13,7 +13,9 @@ lint: ## golint
 	${GOPATH}/bin/golint github.com/mplx/gosample/...
 
 test: ## Test gosample
-	go test github.com/mplx/gosample/numbers
+	mkdir -p build
+	go test github.com/mplx/gosample/numbers -outputdir ${GOPATH}\src\github.com\mplx\gosample\build -coverprofile coverage.out
+	go tool cover -html=build\coverage.out -o build\coverage.html
 
 setup: ## Setup dependencies
 	go get -u github.com/golang/lint/golint
