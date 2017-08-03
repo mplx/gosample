@@ -9,10 +9,14 @@ build: ## Build gosample
 install: ## Install gosample
 	go install
 
+lint: ## golint
+	${GOPATH}/bin/golint github.com/mplx/gosample/...
+
 test: ## Test gosample
 	go test github.com/mplx/gosample/numbers
 
 setup: ## Setup dependencies
+	go get -u github.com/golang/lint/golint
 	go get -u github.com/spf13/cobra/cobra
 	go get -u github.com/stretchr/testify/assert
 

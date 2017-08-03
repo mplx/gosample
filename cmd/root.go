@@ -11,10 +11,12 @@ import (
 func init() {
 }
 
+// Execute of root package is executed when no command is given
 func Execute() {
 	RootCmd.Execute()
 }
 
+// RootCmd is performed when no cmd is given
 var RootCmd = &cobra.Command{
 	Use:   "gosample",
 	Short: "primitive go sample",
