@@ -1,8 +1,14 @@
+run: ## Run gosample
+	go run main.go
+
 build: ## Build gosample
-	go build -o gosample.exe ./cmd/gosample/main.go
+	go build
+
+install: ## Install gosample
+	go install
 
 test: ## Test gosample
-	go test gosample\lib\
+	go test github.com/mplx/gosample/lib
 
 # http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 help:
